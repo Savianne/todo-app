@@ -1,38 +1,149 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex: 1;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100vh;
+  background-image: url(http://localhost:3000/assets/images/main-bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-.App-link {
-  color: #61dafb;
+.main-container .middle-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 0 1 870px;
+  border-radius: 5px;
+  height: fit-content;
+  margin: 100px 15px 15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.main-container .middle-container .left-content, .main-container .middle-container .right-content {
+  flex-wrap: wrap;
+  display: flex;
+  flex: 0 1 340px;
+  height: 450px;
+}
+
+.main-container .middle-container .left-content {
+  background-color: white;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.main-container .middle-container .right-content {
+  position: relative;
+  flex: 1;
+}
+
+.main-container .middle-container .right-content .blur-bg-effect {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  top: 0;
+  left: 0;
+  background-color: rgba(46, 116, 182, 0.147);
+  backdrop-filter: 10px;
+  z-index: 0;
+}
+
+.main-container .middle-container .right-content .new-task-form-area {
+  z-index: 15;
+  background-color: black;
+}
+
+#new-task-form-area {
+  display: flex;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(61, 61, 61, 0.374);
+  backdrop-filter: 10;
+  z-index: 15;
+  transition: height 200ms ease-in-out;
+}
+
+#new-task-form-area  .data-input-holder {
+  display: flex;
+  flex: 0 1 90%;
+  align-items: center;
+  margin-top: 5px;
+  height: 50px;
+  background-color: white; 
+}
+
+#new-task-form-area  .data-input-holder .task-title,
+#new-task-form-area  .data-input-holder .task-title:hover,
+#new-task-form-area  .data-input-holder .task-title:active,
+#new-task-form-area  .data-input-holder .task-title:focus {
+  border: 0;
+  outline: 0;
+  margin-left: 10px;
+  font-size: 18px;
+  display: flex;
+  flex:  1;
+  height: 90%;
+}
+
+#onedit-title-input,
+#onedit-title-input:hover,
+#onedit-title-input:active,
+#onedit-title-input:focus {
+  border: 0;
+  outline: 0;
+  margin-left: 10px;
+  font-size: 13px;
+  display: flex;
+  flex:  1;
+  height: 90%;
+  padding:  2% 10px;
+  border-radius: 2px;
+}
+
+#scrollarea {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+
+#scrollarea::-webkit-scrollbar {
+  background-color: rgba(187, 218, 230, 0.39);
+  width: 10px;
+  border-radius: 5px;
+}
+
+#scrollarea::-webkit-scrollbar-thumb {
+  background-color: rgba(13, 160, 218, 0.529);
+  width: 10px;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 660px) {
+  .main-container .middle-container .left-content,
+  .main-container .middle-container .right-content {
+    flex: 1 0 340px;
   }
-  to {
-    transform: rotate(360deg);
+
+
+
+  .main-container {
+    height: auto;
+    /* background-image: linear-gradient(to top, rgba(0, 0, 255, 0.479), rgba(0, 0, 255, 0.312), rgba(0, 0, 255, 0.036));; */
+  }
+  
+  .main-container .middle-container {
+    margin: 0;
+  }
+
+  .main-container .middle-container .left-content,
+  .main-container .middle-container .right-content,
+  .main-container .middle-container .right-content .blur-bg-effect {
+    border-radius: 0;
   }
 }

@@ -1,0 +1,67 @@
+.main-container {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    height: 100vh;
+    background-image: url(http://localhost:82/assets/images/main-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .main-container .middle-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: fit-content;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    height: fit-content;
+    margin-top: 100px;
+  }
+  
+  .main-container .middle-container h1 {
+      display: flex;
+      justify-content: center;
+      flex: 0 1 100%;
+      font-size: 30px;
+      margin-bottom: 50px;
+      font-weight: bold;
+      color: white;
+  }
+  .main-container .middle-container .left-content {
+    flex-wrap: wrap;
+    display: flex;
+    width: 340px;
+    height: fit-content;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 1px 15px 7px rgb(90 81 81 / 15%);
+  }
+  
+  .date-frame {
+    position: relative;
+    display: flex; 
+    flex: 0 1 100%;
+    height: 200px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-image: url(http://localhost:82/assets/images/date-frame-bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#custom-signin-w-google-btn {
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 1px 5px 2px rgb(226, 225, 225);
+    padding: 10px 20px;
+    transition: box-shadow 500ms ease-in-out, padding 300ms;
+}
+
+#custom-signin-w-google-btn:hover {
+    box-shadow: 0 1px 15px 7px rgb(226, 225, 225);
+}
+
+#custom-signin-w-google-btn:active {
+    padding: 8px 15px;
+}
